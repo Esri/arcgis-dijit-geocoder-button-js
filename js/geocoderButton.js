@@ -24,7 +24,7 @@ function (
         declaredClass: "modules.geocoderButton",
         templateString: dijitTemplate,
         options: {
-            theme: "default",
+            theme: "geocoderButton",
             map: null,
             open: false,
             visible: true,
@@ -50,16 +50,13 @@ function (
             this.watch("visible", this._visible);
             // classes
             this._css = {
-                container: "geocoderButton",
+                container: "container",
                 open: "open",
                 geocoderTheme: "geocoderToggle",
                 item: "navItem",
-                
                 search: "zoomSearchButton",
-            
                 controlDisabled: "controlDisabled",
                 otherButtons: "custom",
-
                 searchContainer: "searchContainer"
             };
         },
