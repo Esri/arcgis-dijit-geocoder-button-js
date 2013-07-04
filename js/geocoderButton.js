@@ -50,7 +50,7 @@ function (
             this.watch("visible", this._visible);
             // classes
             this._css = {
-                container: "container",
+                container: "geocoderBtnCon",
                 open: "open",
                 geocoderTheme: "geocoderToggle",
                 item: "navItem",

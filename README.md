@@ -1,12 +1,34 @@
-# arcgis-dijit-sample-js
+# arcgis-dijit-geocoder-button-js
 
 ## Features
-An example Dijit boilerplate for the ArcGIS API for JavaScript
+A simple dijit button to show/hide the ArcGIS Geocoder Dijit.
 
-[View Demo](http://driskull.github.com/arcgis-dijit-sample-js/)
+![App](https://raw.github.com/driskull/arcgis-dijit-geocoder-button-js/master/images/demo.png)
+
+[View Demo](http://driskull.github.com/arcgis-dijit-geocoder-button-js/)
 
 ## Instructions
-See the powerpoint in the root directory for more information. This demo theater was presented at the 2013 Developer Summit in Palm Springs CA.
+
+Basic use
+
+    var myWidget = new geocoderButton({
+        map: myMap,
+    }, "geocoderButton");
+    myWidget.startup();
+    
+All options
+    
+     var myWidget = new geocoderButton({
+        map: myMap,
+        theme: "geocoderButton", // custom theme to style yourself
+        open: false, // start closed by default
+        visible: true, // show widget
+        geocoderOptions: { // options for the geocoder widget.
+            autoComplete: true
+        }
+    }, "geocoderButton");
+    myWidget.startup();
+    
 
  [New to Github? Get started here.](https://github.com/)
 
@@ -47,5 +69,5 @@ limitations under the License.
 
 A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/geocoder-search-widget-js/master/license.txt) file.
 
-[](Esri Tags: ArcGIS JavaScript API Dijit module boilerplate Widget Public)
+[](Esri Tags: ArcGIS JavaScript API Dijit module swipe Widget Public swipemap LayerSwipe)
 [](Esri Language: JavaScript)
