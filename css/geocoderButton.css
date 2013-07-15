@@ -20,14 +20,6 @@
 	
 }
 
-.geocoderButton .zoomSearchButton:hover{
-    background: #fff url(../images/search_hover.png) center center no-repeat;
-}
-
-.geocoderButton .zoomSearchButton:active{
-    background: #fff url(../images/search_active.png) center center no-repeat;
-}
-
 .open .zoomSearchButton {
     -webkit-border-radius:5px 0 0 5px;
 	-moz-border-radius:5px 0 0 5px;
