@@ -1,5 +1,6 @@
 define([
     "dojo/_base/declare",
+    "dojo/_base/lang",
     "dijit/_WidgetBase",
     "dijit/_OnDijitClickMixin",
     "dijit/_TemplatedMixin",
@@ -14,6 +15,7 @@ define([
 ],
 function (
     declare,
+    lang,
     _WidgetBase, _OnDijitClickMixin, _TemplatedMixin,
     on,
     dijitTemplate, i18n,
@@ -62,21 +64,20 @@ function (
         },
         // start widget. called by user
         startup: function() {
-            var _self = this;
             // map not defined
-            if (!_self.map) {
-                _self.destroy();
+            if (!this.map) {
+                this.destroy();
                 return new Error('map required');
             }
             // map domNode
-            _self._mapNode = dom.byId(_self.map.id);
+            this._mapNode = dom.byId(this.map.id);
             // when map is loaded
-            if (_self.map.loaded) {
-                _self._init();
+            if (this.map.loaded) {
+                this._init();
             } else {
-                on(_self.map, "load", function() {
-                    _self._init();
-                });
+                on(this.map, "load", lang.hitch(this, function() {
+                    this._init();
+                }));
             }
         },
         // connections/subscriptions will be cleaned up during the destroy() lifecycle phase
@@ -117,12 +118,11 @@ function (
         /* Private Functions */
         /* ---------------- */
         _visible: function(){
-            var _self = this;
-            if(_self.get("visible")){
-                domStyle.set(_self.domNode, 'display', 'block');
+            if(this.get("visible")){
+                domStyle.set(this.domNode, 'display', 'block');
             }
             else{
-                domStyle.set(_self.domNode, 'display', 'none');
+                domStyle.set(this.domNode, 'display', 'none');
             }
         },
         _open: function(){
@@ -142,33 +142,31 @@ function (
             }
         },
         _init: function() {
-            var _self = this;
-            _self._visible();
-            _self._open();
-            var options = declare.safeMixin(_self.options.geocoderOptions, {
-                theme: _self._css.geocoderTheme,
-                map: _self.map
+            this._visible();
+            this._open();
+            var options = declare.safeMixin(this.options.geocoderOptions, {
+                theme: this._css.geocoderTheme,
+                map: this.map
             });
-            _self.geocoder = new Geocoder(options, _self._geocoderNode);
+            this.geocoder = new Geocoder(options, this._geocoderNode);
             
-            on(_self.geocoder, 'select', function(e){
+            on(this.geocoder, 'select', lang.hitch(this, function(e){
                 if(e.result){
-                    _self.set("open", false);   
+                    this.set("open", false);   
                 }
-            });
+            }));
             
-            on(_self.map, 'pan-start', function(){
-                _self.set("open", false);
-            });
+            on(this.map, 'pan-start', lang.hitch(this, function(){
+                this.set("open", false);
+            }));
             
-            _self.geocoder.startup();
-            _self.onLoad();
+            this.geocoder.startup();
+            this.onLoad();
         },
         _updateThemeWatch: function(attr, oldVal, newVal) {
-            var _self = this;
-            if (_self.get("loaded")) {
-                domClass.remove(_self.domNode, oldVal);
-                domClass.add(_self.domNode, newVal);
+            if (this.get("loaded")) {
+                domClass.remove(this.domNode, oldVal);
+                domClass.add(this.domNode, newVal);
             }
         }
     });
