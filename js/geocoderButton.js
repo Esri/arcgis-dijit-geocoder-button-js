@@ -6,8 +6,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template
-    "dojo/text!./templates/geocoderButton.html",
-    "dojo/i18n!./nls/geocoderButton",
+    "dojo/text!./templates/GeocoderButton.html",
+    "dojo/i18n!./nls/GeocoderButton",
     "dojo/dom",
     "dojo/dom-class",
     "dojo/dom-style",
@@ -23,10 +23,10 @@ function (
     Geocoder
 ) {
     return declare([_WidgetBase, _OnDijitClickMixin, _TemplatedMixin], {
-        declaredClass: "modules.geocoderButton",
+        declaredClass: "modules.GeocoderButton",
         templateString: dijitTemplate,
         options: {
-            theme: "geocoderButton",
+            theme: "GeocoderButton",
             map: null,
             open: false,
             visible: true,

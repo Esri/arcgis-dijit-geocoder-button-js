@@ -1,8 +1,8 @@
-.geocoderButton .custom span {
+.GeocoderButton .custom span {
 	display:none;
 }
 
-.geocoderButton .zoomSearchButton {
+.GeocoderButton .zoomSearchButton {
     width:30px;
     height: 30px;
     cursor: pointer;
@@ -29,7 +29,7 @@
 }
 
 
-.geocoderButton .searchContainer{
+.GeocoderButton .searchContainer{
     position: absolute;
     top:0;
     left:100%;
