@@ -71,8 +71,6 @@ function (
                 this.destroy();
                 console.log('map required');
             }
-            // map domNode
-            this._mapNode = dom.byId(this.map.id);
             // when map is loaded
             if (this.map.loaded) {
                 this._init();
@@ -89,9 +87,10 @@ function (
         /* ---------------- */
         /* Public Events */
         /* ---------------- */
-        onLoad: function() {
-            this.set("loaded", true);
-        },
+        // load
+        // toggle
+        // open
+        // close
         /* ---------------- */
         /* Public Functions */
         /* ---------------- */
@@ -103,6 +102,7 @@ function (
             else{
                 this.set("open", true);
             }
+            this.emit("toggle", {});
         },
         show: function(){
             this.set("visible", true);  
@@ -111,10 +111,12 @@ function (
             this.set("visible", false);
         },
         open: function(){
-            this.set("open", true);  
+            this.set("open", true);
+            this.emit("open", {});
         },
         close: function(){
             this.set("open", false);
+            this.emit("close", {});
         },
         /* ---------------- */
         /* Private Functions */
@@ -161,9 +163,9 @@ function (
             on(this.map, 'pan-start', lang.hitch(this, function(){
                 this.set("open", false);
             }));
-            
             this.geocoder.startup();
-            this.onLoad();
+            this.set("loaded", true);
+            this.emit("load", {});
         },
         _updateThemeWatch: function(attr, oldVal, newVal) {
             if (this.get("loaded")) {
