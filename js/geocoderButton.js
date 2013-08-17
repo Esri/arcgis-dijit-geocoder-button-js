@@ -1,4 +1,5 @@
 define([
+    "dojo/Evented",
     "dojo/_base/declare",
     "dojo/_base/lang",
     "dijit/_WidgetBase",
@@ -14,6 +15,7 @@ define([
     "esri/dijit/Geocoder"
 ],
 function (
+    Evented,
     declare,
     lang,
     _WidgetBase, _OnDijitClickMixin, _TemplatedMixin,
@@ -23,7 +25,7 @@ function (
     Geocoder
 ) {
     return declare([_WidgetBase, _OnDijitClickMixin, _TemplatedMixin], {
-        declaredClass: "modules.GeocoderButton",
+        declaredClass: "esri.dijit.GeocoderButton",
         templateString: dijitTemplate,
         options: {
             theme: "GeocoderButton",
@@ -67,7 +69,7 @@ function (
             // map not defined
             if (!this.map) {
                 this.destroy();
-                return new Error('map required');
+                console.log('map required');
             }
             // map domNode
             this._mapNode = dom.byId(this.map.id);
