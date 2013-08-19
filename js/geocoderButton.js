@@ -69,7 +69,7 @@ function (
             // map not defined
             if (!this.map) {
                 this.destroy();
-                console.log('map required');
+                console.log('GeocoderButton::map required');
             }
             // when map is loaded
             if (this.map.loaded) {
