@@ -10,7 +10,7 @@ define([
     "dojo/on",
     // load template
     "dojo/text!zesri/dijit/templates/GeocoderButton.html",
-    "dojo/i18n!./nls/GeocoderButton",
+    "dojo/i18n!zesri/nls/jsapi",
     "dojo/dom-class",
     "dojo/dom-style",
     "esri/dijit/Geocoder"
