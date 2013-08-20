@@ -9,7 +9,7 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template
-    "dojo/text!./templates/GeocoderButton.html",
+    "dojo/text!zesri/dijit/templates/GeocoderButton.html",
     "dojo/i18n!./nls/GeocoderButton",
     "dojo/dom-class",
     "dojo/dom-style",
