@@ -26,7 +26,7 @@ function (
     domClass, domStyle,
     Geocoder
 ) {
-    var Widget = declare([_WidgetBase, _OnDijitClickMixin, _TemplatedMixin], {
+    var Widget = declare([Evented, _WidgetBase, _OnDijitClickMixin, _TemplatedMixin], {
         declaredClass: "esri.dijit.GeocoderButton",
         templateString: dijitTemplate,
         options: {
