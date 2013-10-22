@@ -5,7 +5,7 @@ define([
     "dojo/has",
     "esri/kernel",
     "dijit/_WidgetBase",
-    "dijit/_OnDijitClickMixin",
+    "dijit/a11yclick",
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template
@@ -20,13 +20,13 @@ function (
     declare,
     lang,
     has, esriNS,
-    _WidgetBase, _OnDijitClickMixin, _TemplatedMixin,
+    _WidgetBase, a11yclick, _TemplatedMixin,
     on,
     dijitTemplate, i18n,
     domClass, domStyle,
     Geocoder
 ) {
-    var Widget = declare([_WidgetBase, _OnDijitClickMixin, _TemplatedMixin, Evented], {
+    var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
         declaredClass: "esri.dijit.GeocoderButton",
         templateString: dijitTemplate,
         options: {
@@ -65,6 +65,13 @@ function (
                 otherButtons: "custom",
                 searchContainer: "searchContainer"
             };
+        },
+        // bind listener for button to action
+        postCreate: function() {
+            this.inherited(arguments);
+            this.own(
+                on(this._searchNode, a11yclick, lang.hitch(this, this.toggle))
+            );
         },
         // start widget. called by user
         startup: function() {
