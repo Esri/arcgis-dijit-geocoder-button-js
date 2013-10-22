@@ -41,15 +41,15 @@ function (
         // lifecycle: 1
         constructor: function(options, srcRefNode) {
             // mix in settings and defaults
-            declare.safeMixin(this.options, options);
+            var defaults = lang.mixin({}, this.options, options);
             // widget node
             this.domNode = srcRefNode;
             this._i18n = i18n;
             // properties
-            this.set("map", this.options.map);
-            this.set("theme", this.options.theme);
-            this.set("open", this.options.open);
-            this.set("visible", this.options.visible);
+            this.set("map", defaults.map);
+            this.set("theme", defaults.theme);
+            this.set("open", defaults.open);
+            this.set("visible", defaults.visible);
             // listeners
             this.watch("theme", this._updateThemeWatch);
             this.watch("open", this._open);
@@ -150,7 +150,7 @@ function (
         _init: function() {
             this._visible();
             this._open();
-            var options = declare.safeMixin(this.options.geocoderOptions, {
+            var options = lang.mixin({}, this.options.geocoderOptions, {
                 theme: this._css.geocoderTheme,
                 map: this.map
             });
