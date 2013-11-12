@@ -84,7 +84,7 @@ function (
             if (this.map.loaded) {
                 this._init();
             } else {
-                on(this.map, "load", lang.hitch(this, function() {
+                on.once(this.map, "load", lang.hitch(this, function() {
                     this._init();
                 }));
             }
