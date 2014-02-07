@@ -6,7 +6,7 @@
     width:30px;
     height: 30px;
     cursor: pointer;
-    border: 2px solid #666;
+    border: 1px solid #57585A;
     background: #fff url(../images/search.png) center center no-repeat;
     -webkit-user-select:none;
 	-moz-user-select:none;
@@ -85,7 +85,7 @@
     width: 100%;
     margin: 0;
     background: #fff;
-    border: 2px solid #666;
+    border: 1px solid #57585A;
     border-left: 0;
     -webkit-border-radius: 0 5px 5px 0;
     border-radius: 0 5px 5px 0;
@@ -186,7 +186,7 @@
     left: 0;
     top: 100%;
     margin: 0 0 0 -2px;
-    border: 2px solid #666;
+    border: 1px solid #57585A;
     border-top: 0;
     padding: 0;
     background: #fff;
@@ -231,7 +231,7 @@
     margin: 0 0 0 -2px;
     padding: 0;
     background: #fff;
-    border: 2px solid #666;
+    border: 1px solid #57585A;
     border-top: 0;
     -webkit-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
