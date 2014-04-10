@@ -3,9 +3,9 @@
 ## Features
 A simple dijit button to show/hide the ArcGIS Geocoder Dijit.
 
-![App](https://raw.github.com/driskull/arcgis-dijit-geocoder-button-js/master/images/demo.png)
+![App](https://raw.github.com/esri/arcgis-dijit-geocoder-button-js/master/images/demo.png)
 
-[View Demo](http://driskull.github.com/arcgis-dijit-geocoder-button-js/)
+[View Demo](http://esri.github.com/arcgis-dijit-geocoder-button-js/)
 
 ## Instructions
 
