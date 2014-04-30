@@ -9,8 +9,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template
-    "dojo/text!zesri/dijit/templates/GeocoderButton.html",
-    "dojo/i18n!zesri/nls/jsapi",
+    "dojo/text!./dijit/templates/GeocoderButton.html",
+    "dojo/i18n!./nls/jsapi",
     "dojo/dom-class",
     "dojo/dom-style",
     "esri/dijit/Geocoder"
@@ -26,8 +26,7 @@ function (
     domClass, domStyle,
     Geocoder
 ) {
-    var Widget = declare([_WidgetBase, _TemplatedMixin, Evented], {
-        declaredClass: "esri.dijit.GeocoderButton",
+    var Widget = declare("esri.dijit.GeocoderButton", [_WidgetBase, _TemplatedMixin, Evented], {
         templateString: dijitTemplate,
         options: {
             theme: "GeocoderButton",
