@@ -9,8 +9,8 @@ define([
     "dijit/_TemplatedMixin",
     "dojo/on",
     // load template
-    "dojo/text!./dijit/templates/GeocoderButton.html",
-    "dojo/i18n!./nls/jsapi",
+    "dojo/text!application/dijit/templates/GeocoderButton.html",
+    "dojo/i18n!application/nls/jsapi",
     "dojo/dom-class",
     "dojo/dom-style",
     "esri/dijit/Geocoder"
